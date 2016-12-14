@@ -9,14 +9,14 @@ angular.module('MiChat', [ 'btford.socket-io'])
     usuario : '',
     mensaje : ''
   }
-  $scope.alguien_escriviendo = 'Node.js + MongoDB + Angular.js + Socket.io'
+  $scope.alguien_escribiendo = 'Node.js + MongoDB + Angular.js + Socket.io'
 
   $scope.enviarMensaje = function () {
     mySocket.emit('nuevo_mensaje', $scope.nuevo_mensaje)
     $scope.nuevo_mensaje.mensaje = ''
   }
-  $scope.escriviendo = function (usuario) {
-    mySocket.emit('escriviendo_msj', usuario)
+  $scope.escribiendo = function (usuario) {
+    mySocket.emit('escribiendo_msj', usuario)
   }
 
   function scroll(){
@@ -29,8 +29,8 @@ angular.module('MiChat', [ 'btford.socket-io'])
      $scope.alguien_escriviendo = 'Node.js + MongoDB + Angular.js + Socket.io'
      setTimeout(scroll,300);
   })
-  mySocket.on('escriviendo', function (usuario){
-    $scope.alguien_escriviendo = usuario + ' esta escriviendo ...'
+  mySocket.on('escribiendo', function (usuario){
+    $scope.alguien_escribiendo = usuario + ' esta escribiendo ...'
   })
 
 })
