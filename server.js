@@ -66,8 +66,8 @@ io.on('connection', function(socket) {
   })
 
 	// Escuhar el evento escriviendo
-	socket.on('escriviendo_msj', function(usuario) {
-	    io.sockets.emit('escriviendo', usuario)
+	socket.on('escribiendo_msj', function(usuario) {
+	    io.sockets.emit('escribiendo', usuario)
   })
 
 })
