@@ -14,7 +14,7 @@
       </p>
     </div>
     <p class="descripcion">
-      {{ alguien_escriviendo }}
+      {{ alguien_escribiendo }}
     </p>
     <div class="lista_mensajes" id="lista">
       <div ng-repeat="mensaje in mensajes" class="mensaje">
@@ -30,7 +30,7 @@
 
     <div class="footer">
       <input type="text" class="input" ng-model="nuevo_mensaje.usuario" placeholder="Nombre">
-      <input type="text" class="input" ng-model="nuevo_mensaje.mensaje" ng-keypress="escriviendo(nuevo_mensaje.usuario)" placeholder="Mensage...">
+      <input type="text" class="input" ng-model="nuevo_mensaje.mensaje" ng-keypress="escribiendo(nuevo_mensaje.usuario)" placeholder="Mensage...">
       <button class="buttonCircular" ng-click="enviarMensaje()">
         <img src="img/enviar.svg" height="30" />
   		</button>
