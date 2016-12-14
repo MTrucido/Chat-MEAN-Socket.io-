@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Chat(Angular+Socket.io)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilo.css" />
+  </head>
+  <body ng-app="MiChat" ng-controller="ctrlChat">
+    <div class="header">
+      <img src="img/logo.svg" height="60" class="logo" />
+      <p class="titulo">
+        Chat (websocket)
+      </p>
+    </div>
+    <p class="descripcion">
+      {{ alguien_escriviendo }}
+    </p>
+    <div class="lista_mensajes" id="lista">
+      <div ng-repeat="mensaje in mensajes" class="mensaje">
+        <div class="avatar">
+          <img src="img/avatar.svg" width="60" height="60" />
+        </div>
+        <div class="data_mensaje">
+          <h4 class="nom_usuario">{{ mensaje.usuario }}</h4>
+          <h3 class="text_mensaje">{{ mensaje.mensaje }}</h3>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <input type="text" class="input" ng-model="nuevo_mensaje.usuario" placeholder="Nombre">
+      <input type="text" class="input" ng-model="nuevo_mensaje.mensaje" ng-keypress="escriviendo(nuevo_mensaje.usuario)" placeholder="Mensage...">
+      <button class="buttonCircular" ng-click="enviarMensaje()">
+        <img src="img/enviar.svg" height="30" />
+  		</button>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+  	<script src="js/socket.min.js"></script>
+  	<script src="js/app.js"></script>
+  </body>
+</html>
