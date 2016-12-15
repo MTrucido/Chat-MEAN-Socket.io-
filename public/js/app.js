@@ -26,7 +26,7 @@ angular.module('MiChat', [ 'btford.socket-io'])
 
   mySocket.on('mensajes', function (mensajes){
      $scope.mensajes = mensajes
-     $scope.alguien_escriviendo = 'Node.js + MongoDB + Angular.js + Socket.io'
+     $scope.alguien_escribiendo = 'Node.js + MongoDB + Angular.js + Socket.io'
      setTimeout(scroll,300);
   })
   mySocket.on('escribiendo', function (usuario){
